@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using StudentTeamManager.Core.Entities;
 
 namespace StudentTeamManager.Core.domainservices
 {
-    interface IStudentRepository
+    public interface IStudentRepository
     {
+        public IEnumerable<Student> GetAllStudents();
     }
 }

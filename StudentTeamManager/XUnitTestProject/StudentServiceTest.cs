@@ -10,13 +10,23 @@ namespace XUnitTestProject
 {
     public class StudentServiceTest
     {
-        private IEnumerable<Student> students = null;
+        private readonly IEnumerable<Student> students = null;
         private readonly Mock<IStudentRepository> studentMock;
+
+        public StudentServiceTest()
+        {
+            studentMock = new Mock<IStudentRepository>();
+            studentMock.Setup(repo => repo.GetAllStudents()).Returns(() => students);
+        }
 
         [Fact]
         public void GetAllStudentsTest()
         {
+            //ARRANGE
+            //ACT
+            //ASSERT
 
+            Assert.NotNull(students);
         }
     }
 }
